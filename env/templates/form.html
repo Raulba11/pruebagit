@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{%block title%}
+    Form
+        {%endblock%}
+   {%block content%}
+
+   <h1>Datos personales</h1>
+    <h2>Rellene el formulario </h2>
+</br></br>
+<form class="form-floating" action="/gg" method="post">
+    <div class="mb-3">
+     
+      <input type="text" class="form-control " name="first_name" id="fn" aria-describedby="emailHelp" value="{{fn}}" placeholder="First Name">
+    
+    </div>
+    <div class="mb-3">
+     
+        <input type="text" class="form-control" name="last_name" id="sn" value="{{ln}}" aria-describedby="emailHelp" placeholder="Last Name">
+      </div>
+      <div class="mb-3">
+     
+        <input type="text" class="form-control" name="nac" id="nac" value="{{nac}}" aria-describedby="emailHelp" placeholder="Nacionality">
+      </div>
+      
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</br></br>
+
+  {%if error%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{error}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {%endif%}
+  
+
+{%endblock%}

@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{%block title%}
+    Friends
+        {%endblock%}
+   {%block content%}
+   <h1>Update</h1>
+</br>
+<form  action="/update/{{friend_to_update.id}}" method="post">
+    
+      <input type="text" name="name" placeholder="Name" value="{{friend_to_update.name}}">
+      <input type="submit" value="Add name" class="btn btn-secondary">
+    
+    
+  </form>
+</br></br>
+
+
+</br></br>
+{%if error%}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{error}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{%endif%}
+
+
+{%endblock%}

@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{%block title%}
+    Friends
+        {%endblock%}
+   {%block content%}
+   <h1>Friends</h1>
+</br>
+<form  action="/friends" method="post">
+    
+      <input type="text" name="name" placeholder="Name">
+      <input type="submit" value="Add name" class="btn btn-secondary">
+    
+    
+  </form>
+</br></br>
+
+  
+<ul>
+    {%for friend in friends%}
+        <li>{{friend.name}}<ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-secondary btn-sm" aria-current="page" href="/update/{{friend.id}}">Update</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-danger btn-sm" href="/delete/{{friend.id}}">Delete</a>
+            </li>
+            
+          </ul></li>
+    {%endfor%}
+</ul>
+
+</br></br>
+{%if error%}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{error}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{%endif%}
+
+
+{%endblock%}
